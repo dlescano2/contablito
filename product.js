@@ -40,5 +40,4 @@ function resetForm() {
     document.getElementById('gridRadios3').checked = true;
 }
 
-// Llamar a generateUniqueId() solo si hay un evento de clic en el botón "Guardar"
 document.getElementById('saveButton').addEventListener('click', addProduct);

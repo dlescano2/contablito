@@ -80,11 +80,21 @@
                       </tr>
                       <form id="productForm">
                         <tr>
-                          <td><input type="text" id="productName" placeholder="Nombre del producto" required></td>
-                          <td><input type="number" id="productQuantity" placeholder="Cantidad" required></td>
-                          <td><input type="number" id="productPrice" placeholder="Precio" required></td>
+                          <td>
+                            <input type="text" id="productName" placeholder="Nombre del producto" required>
+                            <span id="productNameError" class="error-message"></span>
+                          </td>
+                          <td>
+                            <input type="number" id="productQuantity" placeholder="Cantidad" required>
+                            <span id="productQuantityError" class="error-message"></span>
+                          </td>
+                          <td>
+                            <input type="number" id="productPrice" placeholder="Precio" required>
+                            <span id="productPriceError" class="error-message"></span>
+                          </td>
                           <td><button id="addProductButton" type="submit">Agregar</button></td>
                         </tr>
+                        
                       </form>
                   </thead>
                   <tbody id="productsList">

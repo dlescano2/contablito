@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>${productName}</td>
             <td>${productQuantity}</td>
             <td>${productPrice}</td>
-            <td><button class="btn btn-danger delete-button">Eliminar</button></td>
+            <td><button class="btn btn-sm btn-danger rounded-1 delete-button">X</button></td>
           `;
 
     containerProductList.appendChild(newRow);

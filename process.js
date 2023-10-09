@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
     errorElement.style.display = "none";
   }
 
+  // Función para eliminar una fila de producto
+  function deleteProductRow(event) {
+    const row = event.target.closest("tr");
+    if (row) {
+      row.remove();
+    }
+  }
+
   addProductButton.addEventListener("click", function (e) {
     e.preventDefault(); // Evita que se recargue la página
 
@@ -50,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>${productName}</td>
             <td>${productQuantity}</td>
             <td>${productPrice}</td>
-            <td><button class="btn btn-danger">Eliminar</button></td>
+            <td><button class="btn btn-danger delete-button">Eliminar</button></td>
           `;
 
     containerProductList.appendChild(newRow);
@@ -59,5 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("productName").value = "";
     document.getElementById("productQuantity").value = "";
     document.getElementById("productPrice").value = "";
+
+    // Agregar un manejador de eventos para el botón "Eliminar"
+    const deleteButton = newRow.querySelector(".delete-button");
+    deleteButton.addEventListener("click", deleteProductRow);
   });
 });

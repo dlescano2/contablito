@@ -56,7 +56,7 @@
         <h2>Ingreso de comprobantes</h2>
         <form class="form mt-5 me-3" method="post">
           <div class="row mb-3">
-            <div class="col">
+            <div class="col mb-3">
               <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Razón social">
               <datalist id="datalistOptions">
                 <option value="Cliente 1"></option>
@@ -69,58 +69,63 @@
             <div class="col">
               <button type="submit" class="btn btn-primary">Agregar</button>
             </div>
-            <div><div id="containerProductList">
-              <h1>Productos</h1>
+            <div class="row mb-3">
+              <div class="col-auto">
+                <input type="date" class="form-control" placeholder="fecha">
+              </div>
+              <div class="col-auto">
+                <input type="number" class="form-control" placeholder="N° factura">
+              </div>
+              <div class="col">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Tipo de comprobante</option>
+                  <option value="1">Compra contado</option>
+                  <option value="2">Compra crédito</option>
+                </select>
+              </div>
+            </div>
+            <div id="containerProductList">
               <table class="table">
-                  <thead>
-                      <tr>
-                          <th scope="col">Nombre</th>
-                          <th scope="col">Cantidad</th>
-                          <th scope="col">Precio</th>
-                      </tr>
-                      <form id="productForm">
-                        <tr>
-                          <td>
-                            <input type="text" id="productName" placeholder="Nombre del producto" required>
-                            <span id="productNameError" class="error-message"></span>
-                          </td>
-                          <td>
-                            <input type="number" id="productQuantity" placeholder="Cantidad" required>
-                            <span id="productQuantityError" class="error-message"></span>
-                          </td>
-                          <td>
-                            <input type="number" id="productPrice" placeholder="Precio" required>
-                            <span id="productPriceError" class="error-message"></span>
-                          </td>
-                          <td><button id="addProductButton" type="submit">Agregar</button></td>
-                        </tr>
-                        
-                      </form>
-                  </thead>
-                  <tbody id="productsList">
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span id="productNameError" class="error-message"></span>
+                      <input type="text" id="productName" class="form-control" placeholder="Nombre del producto" required>
+                      
+                    </td>
+                    <td>
+                      <input type="number" id="productQuantity" class="form-control" placeholder="Cantidad" required>
+                      <span id="productQuantityError" class="error-message"></span>
+                    </td>
+                    <td>
+                      <input type="number" id="productPrice" class="form-control" placeholder="Precio" required>
+                      <span id="productPriceError" class="error-message"></span>
+                    </td>
+                    <td><button id="addProductButton" class="btn btn-outline-primary" type="submit">Agregar</button></td>
+                  </tr>
+                </thead>
+                <tbody id="productsList">
 
-                  </tbody>
-                  
+                </tbody>
               </table>
-          </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <textarea
+                  class="form-control"
+                  id="description"
+                  placeholder="Comentarios"
+                  style="height: 100px"
+                ></textarea>
+              </div>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-auto">
-              <input type="date" class="form-control" placeholder="fecha">
-            </div>
-            <div class="col-auto">
-              <input type="number" class="form-control" placeholder="N° factura">
-            </div>
-            <div class="col">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Tipo de comprobante</option>
-                <option value="1">Compra contado</option>
-                <option value="2">Compra crédito</option>
-              </select>
-            </div>
-          </div>
-    
           </fieldset>
           <button type="submit" class="btn btn-primary mt-3">Guardar</button>
         </form>
